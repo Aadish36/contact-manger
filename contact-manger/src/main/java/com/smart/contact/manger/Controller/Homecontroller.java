@@ -1,17 +1,15 @@
 package com.smart.contact.manger.Controller;
 
 
-import com.mysql.cj.protocol.Message;
+import com.smart.contact.manger.helper.message ;
 import com.smart.contact.manger.Entity.user;
 import com.smart.contact.manger.Reposetery.userrepo;
-import com.smart.contact.manger.helper.message;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -52,7 +50,7 @@ public String signup(Model model){
              return "signup";
          }
          user.setRole("ROLE_USER");
-         user.isEnabled(true);
+         user.setEnabled(true);
          user.setImageurl("default.png");
          user.setPassword(passwordEncoder.encode(user.getPassword()));
          System.out.println("Agreement:"+agreement);

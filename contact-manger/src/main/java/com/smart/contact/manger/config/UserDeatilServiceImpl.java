@@ -12,7 +12,7 @@ public class UserDeatilServiceImpl implements UserDetailsService {
     private userrepo Userrepo;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    user User= Userrepo.getUserByUsername(username);
+    user User= Userrepo.findByEmail(username);
     if (User==null){
         throw new UsernameNotFoundException("could not found user namee");
     }

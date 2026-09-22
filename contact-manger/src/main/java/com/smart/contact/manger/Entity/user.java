@@ -62,7 +62,7 @@ public class user {
         Password = password;
     }
 
-    public boolean isEnabled(boolean b) {
+    public boolean isEnabled() {
         return enabled;
     }
 
@@ -100,7 +100,6 @@ public class user {
                 "id=" + id +
                 ", Name='" + Name + '\'' +
                 ", Email='" + Email + '\'' +
-                ", Password='" + Password + '\'' +
                 ", Role='" + Role + '\'' +
                 ", enabled=" + enabled +
                 ", imageurl='" + imageurl + '\'' +
